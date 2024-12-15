@@ -44,4 +44,3 @@ This repository is for academic purposes and does not accept external contributi
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-```
