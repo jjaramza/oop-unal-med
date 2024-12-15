@@ -2,9 +2,16 @@
 
 This repository contains the exercises and projects developed for the **Object-Oriented Programming (OOP)** course, part of the **Computer Science** program at the **Universidad Nacional de Colombia**, Medellin campus.
 
+### Referencies
+[1] Lógica de Programación by Efrain Oviedo Regino
+
+[2] Ejercicios de Programación Orientada a Objetos by Leonardo Bermon Angarita
+
 ## Content
 
-- **`activity/`**: Practical exercises proposed in class or as assignments.
+- **`activity1/`**: Practical exercises proposed in class or as assignments.
+- **`activity2/`**: Practical exercises proposed in class or as assignments.
+- **`activity3/`**: Practical exercises proposed in class or as assignments.
 
 ## Technologies
 
