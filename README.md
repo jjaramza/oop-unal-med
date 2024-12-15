@@ -30,7 +30,7 @@ This repository uses **Python** as the main language for developing exercises an
    git clone https://github.com/your_user/oop-unal-med.git
    ```
 2. Navigate through the folders according to your needs:
-   - Assignments in `activity/`
+   - Assignments in `activity1/`, `activity2/` and `activity3/`
 
 3. Run the scripts with Python (version >= 3.9):
    ```bash
