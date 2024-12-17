@@ -32,19 +32,22 @@ class EmpleadoApp:
             label="Horas trabajadas",
             width=230,
             prefix_icon=ft.Icons.ACCESS_TIME,
-            helper_text="Horas trabajadas en el mes"
+            helper_text="Horas trabajadas en el mes",
+            input_filter=ft.InputFilter(allow=True, regex_string=r"^\d*\.?\d*$", replacement_string="")
         )
         self.valor_hora_entrada = ft.TextField(
             label="Valor hora",
             width=230,
             prefix_icon=ft.Icons.ATTACH_MONEY,
-            helper_text="Valor sin espacios ni puntos"
+            helper_text="Valor sin espacios ni puntos",
+            input_filter=ft.InputFilter(allow=True, regex_string=r"^\d*\.?\d*$", replacement_string="")
         )
         self.rete_fuente_entrada = ft.TextField(
             label="Retención en la fuente",
             width=230,
             prefix_icon=ft.Icons.PERCENT,
-            helper_text="Porcentaje de la rete fuente"
+            helper_text="Porcentaje de la rete fuente",
+            input_filter=ft.InputFilter(allow=True, regex_string=r"^\d*\.?\d*$", replacement_string="")
         )
 
         # Botones de tipo ElevateButton
@@ -96,8 +99,8 @@ class EmpleadoApp:
         # Crear tabla para mostrar la información del empleado
         self.info_tabla = ft.DataTable(
             border=ft.border.all(width=1, color=ft.Colors.GREY_700),
-            vertical_lines=ft.BorderSide(width=1, color=ft.Colors.GREY_700),
-            horizontal_lines=ft.BorderSide(width=1, color=ft.Colors.GREY_700),
+            vertical_lines=ft.BorderSide(width=1),
+            horizontal_lines=ft.BorderSide(width=1),
             border_radius=10,
             columns=[
                 ft.DataColumn(ft.Text(value="Código empleado", weight=ft.FontWeight.BOLD)),
@@ -184,10 +187,10 @@ class EmpleadoApp:
 
             nueva_fila = ft.DataRow(
                 cells=[
-                    ft.DataCell(ft.Text(value=codigo)),
-                    ft.DataCell(ft.Text(value=nombre)),
-                    ft.DataCell(ft.Text(value=salario_bruto)),
-                    ft.DataCell(ft.Text(value=salario_neto))
+                    ft.DataCell(ft.Text(value=codigo, color=ft.Colors.BLACK)),
+                    ft.DataCell(ft.Text(value=nombre, color=ft.Colors.BLACK)),
+                    ft.DataCell(ft.Text(value=salario_bruto, color=ft.Colors.BLACK)),
+                    ft.DataCell(ft.Text(value=salario_neto, color=ft.Colors.BLACK))
                 ]
             )
             self.info_tabla.rows.append(nueva_fila)

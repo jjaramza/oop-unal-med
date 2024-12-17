@@ -3,6 +3,13 @@ class Empleado:
     Esta clase define objetos de tipo Empleado la cual tiene varios atributos como
     código del empleado, nombres, número de horas trabajadas al mes, valor hora trabajada
     y porcentaje de retención en la fuente.
+
+    Attributes:
+        codigo (str): Código del empleado
+        nombre (str): Nombre completo del empleado
+        horas_mes (float): Número de horas trabajadas al mes
+        valor_hora (float): Valor de la hora trabajada
+        porcentaje_rete_fuente (float): Porcentaje de retención en la fuente
     """
     def __init__(self, codigo: str, nombre: str, horas_mes: float, valor_hora: float, porcentaje_rete_fuente: float) -> None:
         """
