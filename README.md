@@ -9,9 +9,9 @@ This repository contains the exercises and projects developed for the **Object-O
 
 ## Content
 
-- **`activity1/`**: Practical exercises proposed in class or as assignments.
-- **`activity2/`**: Practical exercises proposed in class or as assignments.
-- **`activity3/`**: Practical exercises proposed in class or as assignments.
+- **`actividad1/`**: Practical exercises proposed in class or as assignments.
+- **`actividad2/`**: Practical exercises proposed in class or as assignments.
+- **`actividad3/`**: Practical exercises proposed in class or as assignments.
 
 ## Technologies
 
@@ -30,7 +30,7 @@ This repository uses **Python** as the main language for developing exercises an
    git clone https://github.com/your_user/oop-unal-med.git
    ```
 2. Navigate through the folders according to your needs:
-   - Assignments in `activity1/`, `activity2/` and `activity3/`
+   - Assignments in `actividad1/`, `actividad2/` and `actividad3/`
 
 3. Run the scripts with Python (version >= 3.9):
    ```bash
