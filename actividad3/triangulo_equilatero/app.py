@@ -4,9 +4,7 @@ import flet as ft
 from equilatero import Equilatero
 
 class EquilateroApp:
-    """
-    Esta clase crea la interfaz gráfica de usuario.
-    """
+
     def __init__(self, page: ft.Page):
         self.page = page
         self.page.title = "Triángulo Equilátero"
