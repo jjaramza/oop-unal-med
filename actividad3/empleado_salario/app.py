@@ -4,9 +4,7 @@ import flet as ft
 from empleado import Empleado
 
 class EmpleadoApp:
-    """
-    Esta clase crea la interfaz gráfica de usuario.
-    """
+
     def __init__(self, page: ft.Page):
         self.page = page
         self.page.title = "Empleado"
