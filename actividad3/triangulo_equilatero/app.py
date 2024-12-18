@@ -103,19 +103,19 @@ class EquilateroApp:
         self.resumen_texto = ft.Column(
             controls=[
                 ft.Text(
-                    value="Perímetro: ",
+                    value="Perímetro (cm): ",
                     size=16,
                     weight=ft.FontWeight.BOLD,
                     color=ft.Colors.BLACK
                 ),
                 ft.Text(
-                    value="Altura: ",
+                    value="Altura (cm): ",
                     size=16,
                     weight=ft.FontWeight.BOLD,
                     color=ft.Colors.BLACK
                 ),
                 ft.Text(
-                    value="Área: ",
+                    value="Área (cm²): ",
                     size=16,
                     weight=ft.FontWeight.BOLD,
                     color=ft.Colors.BLACK
