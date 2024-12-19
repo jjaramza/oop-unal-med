@@ -17,12 +17,12 @@ class ComparacionApp:
         self.valor_a_entrada = ft.TextField(
             label="Primer número",
             width=180,
-            input_filter=ft.NumbersOnlyInputFilter()
+            input_filter=ft.InputFilter(regex_string=r"^-?\d*$", allow=True, replacement_string="")
         )
         self.valor_b_entrada = ft.TextField(
             label="Segundo número",
             width=180,
-            input_filter=ft.NumbersOnlyInputFilter()
+            input_filter=ft.InputFilter(regex_string=r"^-?\d*$", allow=True, replacement_string="")
         )
 
         # Botones
@@ -114,6 +114,13 @@ class ComparacionApp:
         if num_a == "" or num_b == "":
             snack_bar = ft.SnackBar(
                 content=ft.Text("Los campos no pueden estar vacíos.")
+            )
+            self.page.overlay.append(snack_bar)
+            snack_bar.open = True
+            self.page.update()
+        elif num_a == "-" or num_b == "-":
+            snack_bar = ft.SnackBar(
+                content=ft.Text("Ingrese un número entero válido.")
             )
             self.page.overlay.append(snack_bar)
             snack_bar.open = True
