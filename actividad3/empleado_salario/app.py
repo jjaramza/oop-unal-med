@@ -171,6 +171,13 @@ class EmpleadoApp:
             self.page.overlay.append(snack_bar)
             snack_bar.open = True
             self.page.update()
+        elif horas == "." or valor == "." or porcentaje == ".":
+            snack_bar = ft.SnackBar(
+                content=ft.Text("Debe ingresar valores numéricos válidos.")
+            )
+            self.page.overlay.append(snack_bar)
+            snack_bar.open = True
+            self.page.update()
         elif not self.info_tabla.rows == []:
             snack_bar = ft.SnackBar(
                 content=ft.Text("Debes limpiar los campos para realizar una nueva consulta.")
