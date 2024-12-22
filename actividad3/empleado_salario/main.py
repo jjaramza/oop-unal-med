@@ -5,7 +5,7 @@ from empleado import Empleado
 
 class NominaApp:
     
-    def __init__(self, root: tk.Tk):
+    def __init__(self, root: tk.Tk) -> None:
         self.root = root
         self.root.title("Nómina empleado")
         self.root.geometry("300x450")
