@@ -143,7 +143,7 @@ class NominaApp:
         else:
             self.label_error_codigo.config(text="")
             self.campos_validos["codigo"] = True
-            self.actualizar_boton_enviar()
+        self.actualizar_boton_enviar()
     
     def validar_nombre(self, *args):
         """Valida que el campo nombre empleado contenga solo letras y espacios."""
@@ -157,7 +157,7 @@ class NominaApp:
         else:
             self.label_error_nombre.config(text="")
             self.campos_validos["nombre"] = True
-            self.actualizar_boton_enviar()
+        self.actualizar_boton_enviar()
     
     def validar_horas_trabajadas(self, *args):
         """Valida que el campo horas trabajadas contenga solo números reales."""
@@ -171,7 +171,7 @@ class NominaApp:
         else:
             self.label_error_horas.config(text="")
             self.campos_validos["horas"] = True
-            self.actualizar_boton_enviar()
+        self.actualizar_boton_enviar()
     
     def validar_valor_hora(self, *args):
         """Valida que el campo valor hora solo contenga números reales."""
@@ -185,7 +185,7 @@ class NominaApp:
         else:
             self.label_error_valor.config(text="")
             self.campos_validos["valor"] = True
-            self.actualizar_boton_enviar()
+        self.actualizar_boton_enviar()
     
     def validar_rete_fuente(self, *args):
         """Valida que el campo rete fuente contenga solo números reales."""
@@ -199,7 +199,7 @@ class NominaApp:
         else:
             self.label_error_retefuente.config(text="")
             self.campos_validos["retefuente"] = True
-            self.actualizar_boton_enviar()
+        self.actualizar_boton_enviar()
     
     def actualizar_boton_enviar(self):
         """Actualiza el estado del botón de acuerdo a la validación de los campos."""
@@ -245,16 +245,16 @@ class NominaApp:
         Salario bruto:\t\t$ {f'{info_empleado["salario_bruto"]:,.0f}'.replace(",", ".")}
         Salario neto:\t\t$ {f'{info_empleado["salario_neto"]:,.0f}'.replace(",", ".")}
         """
-        messagebox.showinfo("Resumen", mensaje)
+        messagebox.showinfo(title="Resumen", message=mensaje)
         self.limpiar_campos()
         
     def limpiar_campos(self):
         """Limpiar todos los campos del formulario."""
-        self.stringvar_codigo.set("")
-        self.stringvar_nombre.set("")
-        self.stringvar_horas.set("")
-        self.stringvar_valor.set("")
-        self.stringvar_retefuente.set("")
+        self.stringvar_codigo.set(value="")
+        self.stringvar_nombre.set(value="")
+        self.stringvar_horas.set(value="")
+        self.stringvar_valor.set(value="")
+        self.stringvar_retefuente.set(value="")
         
         self.label_error_codigo.config(text="")
         self.label_error_nombre.config(text="")
