@@ -35,11 +35,9 @@ class EquilateroApp:
         self.button_calcular.pack(pady=10)
         
         # Estado validación del campo
-        self.campos_validos = {
-            "lado": False
-        }
+        self.campos_validos = {"lado": False}
     
-    def creacion_widgets(self):
+    def creacion_widgets(self) -> None:
         """Campos del formulario con sus etiquetas."""
         # Campo lado de un triángulo equilátero
         tk.Label(master=self.frame_principal, text="Lado (en cm):").pack(anchor=tk.W)
@@ -56,30 +54,30 @@ class EquilateroApp:
             fg="red",
             wraplength=300
         )
-        self.label_error_lado.pack()
+        self.label_error_lado.pack(anchor=tk.W)
     
-    def validar_lado(self, *args):
+    def validar_lado(self, *args) -> None:
         """Valida que el campo lado del triángulo contenga solo números."""
         lado = self.stringvar_lado.get()
         if not lado:
             self.label_error_lado.config(text="Campo requerido.")
             self.campos_validos["lado"] = False
         elif not re.match(pattern=r"^[0-9]+(\.[0-9]+)?$", string=lado):
-            self.label_error_lado.config(text="Ingrese solo números.")
+            self.label_error_lado.config(text="Ingrese solo números positivos.")
             self.campos_validos["lado"] = False
         else:
             self.label_error_lado.config(text="")
             self.campos_validos["lado"] = True
         self.actualizar_boton_calcular()
     
-    def actualizar_boton_calcular(self):
+    def actualizar_boton_calcular(self) -> None:
         """Actualiza el estado del botón de acuerdo a la validación de los campos."""
         if all(self.campos_validos.values()):
             self.button_calcular.config(state=tk.NORMAL)
         else:
             self.button_calcular.config(state=tk.DISABLED)
     
-    def calcular_propiedades(self):
+    def calcular_propiedades(self) -> dict[str, float]:
         """Extraer la información del campo lado para calcular las propiedades."""
         lado = float(self.stringvar_lado.get())
         
@@ -95,7 +93,7 @@ class EquilateroApp:
             "area": area
         }
     
-    def mostrar_resultados(self):
+    def mostrar_resultados(self) -> None:
         """Obtiene los datos para mostrar los resultados."""
         propiedades = self.calcular_propiedades()
         mensaje = f"""
@@ -108,14 +106,14 @@ class EquilateroApp:
         messagebox.showinfo(title="Resultados", message=mensaje)
         self.limpiar_campos()
     
-    def limpiar_campos(self):
+    def limpiar_campos(self) -> None:
         """Valores por defecto del framde"""
         self.stringvar_lado.set(value="")
         self.label_error_lado.config(text="")
         self.entry_lado.focus()
     
 
-def main():
+def main() -> None:
     root = tk.Tk()
     EquilateroApp(root=root)
     root.mainloop()
