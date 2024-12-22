@@ -5,7 +5,7 @@ from equilatero import Equilatero
 
 class EquilateroApp:
     
-    def __init__(self, root: tk.Tk):
+    def __init__(self, root: tk.Tk) -> None:
         self.root = root
         self.root.title("Triángulo Equilátero")
         self.root.geometry("350x200")
