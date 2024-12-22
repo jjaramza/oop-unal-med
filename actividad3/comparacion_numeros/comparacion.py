@@ -2,7 +2,7 @@ from enum import Enum
 
 class ResultadoComparacion(Enum):
     """
-    Representa los posibles resultados de comparar dos números enteros.
+    Representa los posibles resultados de comparar dos números.
 
     Attributes:
         MAYOR (str): Indica que el primer número es mayor que el segundo.
@@ -17,26 +17,26 @@ class ResultadoComparacion(Enum):
 class ComparacionNumero:
     """
     Esta clase define objetos de tipo de ComparacionNumero la cual tiene como
-    atributos dos números enteros.
+    atributos dos números.
 
     Attributes:
-        valor_a (int): Primer valor numérico
-        valor_b (int): Segundo valor numérico
+        valor_a (float): Primer valor numérico
+        valor_b (float): Segundo valor numérico
     """
-    def __init__(self, valor_a: int, valor_b: int) -> None:
+    def __init__(self, valor_a: float, valor_b: float) -> None:
         """
         Constructor de la clase ComparacionNumero.
 
         Args:
-            valor_a (int): Parámetro que define el primer valor numérico
-            valor_b (int): Parámetro que define el segundo valor numérico
+            valor_a (float): Parámetro que define el primer valor numérico
+            valor_b (float): Parámetro que define el segundo valor numérico
         """
         self.valor_a = valor_a
         self.valor_b = valor_b
 
     def comparar(self) -> ResultadoComparacion:
         """
-        Compara dos números enteros y devuelve el resultado como un enumerado.
+        Compara dos números y devuelve el resultado como un enumerado.
 
         Returns:
             ResultadoComparacion: Resultado de la comparación.
@@ -50,7 +50,7 @@ class ComparacionNumero:
 
     def comparar_numeros(self) -> str:
         """
-        Compara dos números enteros y devuelve una cada de texto.
+        Compara dos números y devuelve una cada de texto.
 
         Returns:
             str: Cadena que indica si el número A es mayor, igual o menor que el número B.
