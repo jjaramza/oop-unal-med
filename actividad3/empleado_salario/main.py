@@ -51,7 +51,7 @@ class NominaApp:
             "retefuente": False
         }
         
-    def crear_campos_formulario(self):
+    def crear_campos_formulario(self) -> None:
         """Campos del formulario con sus etiquetas."""
         # Campo Código empleado
         tk.Label(master=self.frame_principal, text="Código empleado:").pack(anchor=tk.W)
@@ -134,7 +134,7 @@ class NominaApp:
         )
         self.label_error_retefuente.pack(anchor=tk.W)
     
-    def validar_codigo(self, *args):
+    def validar_codigo(self, *args) -> None:
         """Valida que el campo del código empleado no esté vacío."""
         codigo = self.stringvar_codigo.get()
         if not codigo:
@@ -145,7 +145,7 @@ class NominaApp:
             self.campos_validos["codigo"] = True
         self.actualizar_boton_enviar()
     
-    def validar_nombre(self, *args):
+    def validar_nombre(self, *args) -> None:
         """Valida que el campo nombre empleado contenga solo letras y espacios."""
         nombre = self.stringvar_nombre.get()
         if not nombre:
@@ -159,7 +159,7 @@ class NominaApp:
             self.campos_validos["nombre"] = True
         self.actualizar_boton_enviar()
     
-    def validar_horas_trabajadas(self, *args):
+    def validar_horas_trabajadas(self, *args) -> None:
         """Valida que el campo horas trabajadas contenga solo números reales."""
         horas = self.stringvar_horas.get()
         if not horas:
@@ -173,7 +173,7 @@ class NominaApp:
             self.campos_validos["horas"] = True
         self.actualizar_boton_enviar()
     
-    def validar_valor_hora(self, *args):
+    def validar_valor_hora(self, *args) -> None:
         """Valida que el campo valor hora solo contenga números reales."""
         valor = self.stringvar_valor.get()
         if not valor:
@@ -187,7 +187,7 @@ class NominaApp:
             self.campos_validos["valor"] = True
         self.actualizar_boton_enviar()
     
-    def validar_rete_fuente(self, *args):
+    def validar_rete_fuente(self, *args) -> None:
         """Valida que el campo rete fuente contenga solo números reales."""
         rete_fuente = self.stringvar_retefuente.get()
         if not rete_fuente:
@@ -201,14 +201,14 @@ class NominaApp:
             self.campos_validos["retefuente"] = True
         self.actualizar_boton_enviar()
     
-    def actualizar_boton_enviar(self):
+    def actualizar_boton_enviar(self) -> None:
         """Actualiza el estado del botón de acuerdo a la validación de los campos."""
         if all(self.campos_validos.values()):
             self.button_enviar.config(state=tk.NORMAL)
         else:
             self.button_enviar.config(state=tk.DISABLED)
     
-    def obtener_info_salario(self):
+    def obtener_info_salario(self) -> dict[str, str | float]:
         """Extraer la información de los campos para calcular el salario."""
         codigo = self.entry_codigo.get().strip()
         nombre = self.entry_nombre.get().strip()
@@ -234,7 +234,7 @@ class NominaApp:
             "salario_neto": salario_neto
         }
     
-    def enviar_formulario(self):
+    def enviar_formulario(self) -> None:
         """Obtiene los datos para mostrar lo requerido."""
         info_empleado = self.obtener_info_salario()
         mensaje = f"""
@@ -248,7 +248,7 @@ class NominaApp:
         messagebox.showinfo(title="Resumen", message=mensaje)
         self.limpiar_campos()
         
-    def limpiar_campos(self):
+    def limpiar_campos(self) -> None:
         """Limpiar todos los campos del formulario."""
         self.stringvar_codigo.set(value="")
         self.stringvar_nombre.set(value="")
@@ -265,7 +265,7 @@ class NominaApp:
         self.entry_codigo.focus()
         
 
-def main():
+def main() -> None:
     root = tk.Tk()
     NominaApp(root=root)
     root.mainloop()
