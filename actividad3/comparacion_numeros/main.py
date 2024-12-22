@@ -30,7 +30,7 @@ class ComparacionApp:
         self.button_comparar = tk.Button(
             master=self.frame_principal,
             text="Comparar",
-            command=self.comparar_numeros,
+            command=self.mostrar_comparacion,
             width=15,
             state=tk.DISABLED
         )
@@ -109,15 +109,25 @@ class ComparacionApp:
         else:
             self.button_comparar.config(state=tk.DISABLED)
     
-    def comparar_numeros(self) -> None:
-        """Se realiza la comparación y se muestra en una ventana."""
+    def comparar_numeros(self) -> dict[str, str]:
+        """Se obtiene el resultado de la comparación"""
         numero_a = self.stringvar_numero_a.get()
         numero_b = self.stringvar_numero_b.get()
         
         comparacion = ComparacionNumero(valor_a=float(numero_a), valor_b=float(numero_b))
+        resultado = comparacion.comparar().value 
+        return {
+            "numero_a": numero_a,
+            "numero_b": numero_b,
+            "comparacion": resultado
+        }
+    
+    def mostrar_comparacion(self) -> None:
+        """Muestra en una ventana la comparación."""
+        resultado = self.comparar_numeros()
         
         mensaje = f"""
-        {numero_a} es {comparacion.comparar().value} que {numero_b}
+        {resultado["numero_a"]} es {resultado["comparacion"]} que {resultado["numero_b"]}
         """
         messagebox.showinfo(title="Comparación", message=mensaje)
         self.limpiar_campos()
