@@ -11,7 +11,8 @@ class Empleado:
         valor_hora (float): Valor de la hora trabajada
         porcentaje_rete_fuente (float): Porcentaje de retención en la fuente
     """
-    def __init__(self, codigo: str, nombre: str, horas_mes: float, valor_hora: float, porcentaje_rete_fuente: float) -> None:
+    def __init__(self, codigo: str, nombre: str, horas_mes: float,
+                 valor_hora: float, porcentaje_rete_fuente: float) -> None:
         """
         Constructor de la clase Empleado.
 
@@ -33,7 +34,8 @@ class Empleado:
         Calcula y devuelve el salario bruto de un empleado.
 
         Returns:
-            float: Salario bruto calculado como la multiplicación entre el valor de la hora y las horas trabajadas al mes
+            float: Salario bruto calculado como la multiplicación entre el valor de la hora 
+            y las horas trabajadas al mes
         """
         return self.valor_hora * self.horas_mes
 
@@ -41,7 +43,8 @@ class Empleado:
         """
         Calcula y devuelve el salario neto de un empleado.
         Returns:
-            float: Salario neto que se calcula restándole el valor de la retención en la fuente al salario bruto
+            float: Salario neto que se calcula restándole 
+            el valor de la retención en la fuente al salario bruto
         """
         salario_bruto = self.calcular_salario_bruto()
         return salario_bruto * (1 - self.porcentaje_rete_fuente / 100)
