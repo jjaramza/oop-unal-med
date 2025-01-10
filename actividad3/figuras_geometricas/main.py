@@ -20,7 +20,7 @@ class CreateFrame:
         self._crear_botones()
         self._crear_resultados()
     
-    def _crear_titulo(self):
+    def _crear_titulo(self) -> None:
         ttk.Label(
             master=self.frame,
             text=self.titulo,
@@ -28,7 +28,7 @@ class CreateFrame:
             foreground=COLOR_TITLE
         ).grid(column=0, row=0, columnspan=2, padx=20, pady=20)
     
-    def _agregar_campos(self):
+    def _agregar_campos(self) -> None:
         campos = self._obtener_campos_config()
         for texto, col_label, fila_label in campos["Label"]:
             ttk.Label(master=self.frame, text=texto).grid(
@@ -40,7 +40,7 @@ class CreateFrame:
             self.entries[nombre_variable] = entry
         list(self.entries.values())[0].focus()
         
-    def _crear_botones(self):
+    def _crear_botones(self) -> None:
         ttk.Button(
             master=self.frame,
             text="Calcular",
@@ -53,7 +53,7 @@ class CreateFrame:
             command=self.limpiar_campos
         ).grid(column=1, row=6, padx=10, pady=20)
         
-    def _crear_resultados(self):
+    def _crear_resultados(self) -> None:
         self.text_resultados = tk.Text(
             self.frame,
             width=30,
@@ -62,7 +62,7 @@ class CreateFrame:
         )
         self.text_resultados.grid(column=0, row=7, columnspan=2, padx=20, pady=20)
 
-    def _obtener_campos_config(self):
+    def _obtener_campos_config(self) -> dict:
         return {
             "Círculo": {
                 "Label": [("Radio (cm):", 0, 1)],
@@ -120,7 +120,7 @@ class CreateFrame:
             }
         }.get(self.titulo, {})
     
-    def calcular_propiedades(self):
+    def calcular_propiedades(self) -> None:
         self.text_resultados.config(state="normal")
         try:
             lista_args = [float(entry.get()) for entry in self.entries.values()]
@@ -150,7 +150,7 @@ class CreateFrame:
             self.text_resultados.insert(1.0, "Por favor, ingrese números válidos.")
         self.text_resultados.config(state="disabled")        
     
-    def limpiar_campos(self):
+    def limpiar_campos(self) -> None:
         for entry in self.entries.values():
             entry.delete(0, "end")
         list(self.entries.values())[0].focus()
@@ -178,7 +178,7 @@ class FigurasGeometricasApp:
             fg="blue"
         ).pack()
     
-    def _crear_menu(self):
+    def _crear_menu(self) -> None:
         barra_menu = tk.Menu()
         menu_figuras = tk.Menu(master=barra_menu, tearoff=False)
         
@@ -194,7 +194,7 @@ class FigurasGeometricasApp:
         barra_menu.add_cascade(menu=menu_figuras, label="Figuras")
         self.root.config(menu=barra_menu)
 
-    def cambiar_frame(self, titulo: str):
+    def cambiar_frame(self, titulo: str) -> None:
         if self.frame_actual:
             self.frame_actual.destroy()
         
