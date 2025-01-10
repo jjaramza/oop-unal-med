@@ -1,11 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from circulo import Circulo
-from cuadrado import Cuadrado
-from rectangulo import Rectangulo
-from rombo import Rombo
-from trapecio import Trapecio
-from triangulo_rectangulo import TrianguloRectangulo
+from figuras import Circulo, Cuadrado, Rectangulo, Rombo, Trapecio, TrianguloRectangulo
 
 # Constantes de configuración
 FONT_TITLE = ("Arial", 16, "bold")
