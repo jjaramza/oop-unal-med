@@ -1,5 +1,3 @@
-from math import sqrt
-
 class Trapecio:
     """
     Esta clase define objetos de tipo Trapecio con una
