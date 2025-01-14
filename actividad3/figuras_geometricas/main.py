@@ -126,7 +126,7 @@ class CreateFrame:
             lista_args = [float(entry.get()) for entry in self.entries.values()]
             figuras = {
                 "Círculo": Circulo,
-                "Cuadraro": Cuadrado,
+                "Cuadrado": Cuadrado,
                 "Rectángulo": Rectangulo,
                 "Rombo": Rombo,
                 "Trapecio": Trapecio,

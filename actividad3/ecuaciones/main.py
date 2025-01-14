@@ -168,7 +168,7 @@ class EcuacionApp:
             numC=independiente
         )
         mensaje = ecuacion.mostrar_soluciones()
-        messagebox.showinfo(title="Resume", message=mensaje)
+        messagebox.showinfo(title="Resumen", message=mensaje)
         self.limpiar_campos()
         
     def limpiar_campos(self) -> None:
